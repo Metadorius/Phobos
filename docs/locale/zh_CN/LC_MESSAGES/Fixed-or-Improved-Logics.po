@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Phobos \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-21 19:31+0800\n"
+"POT-Creation-Date: 2021-08-26 18:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,9 +65,9 @@ msgstr ""
 "![image](_static/images/turretoffset-01.png)  \n"
 "*VXL炮台侧偏移，在Breaking Blue project中*"
 
-#: ../Fixed-or-Improved-Logics.md:13 ../Fixed-or-Improved-Logics.md:29
-#: ../Fixed-or-Improved-Logics.md:43 ../Fixed-or-Improved-Logics.md:80
-#: ../Fixed-or-Improved-Logics.md:108 ../Fixed-or-Improved-Logics.md:128
+#: ../Fixed-or-Improved-Logics.md:13 ../Fixed-or-Improved-Logics.md:30
+#: ../Fixed-or-Improved-Logics.md:44 ../Fixed-or-Improved-Logics.md:81
+#: ../Fixed-or-Improved-Logics.md:109 ../Fixed-or-Improved-Logics.md:129
 msgid "image"
 msgstr ""
 
@@ -148,7 +148,13 @@ msgid ""
 " place onto water."
 msgstr "修复了`Naval=yes`会无视`WaterBound=no`强制将建筑限制在水面上的问题。"
 
-#: ../Fixed-or-Improved-Logics.md:29
+#: ../Fixed-or-Improved-Logics.md:28
+msgid ""
+"Infantry with `DeployFireWeapon=-1` can now fire both weapons (decided by"
+" its target), regardless of deployed or not."
+msgstr "拥有`DeployFireWeapon=-1`的步兵现在无论是否部署都可以发射全部武器（取决于目标）。"
+
+#: ../Fixed-or-Improved-Logics.md:30
 msgid ""
 "![image](_static/images/remember-target-after-deploying-01.gif)   *Nod "
 "arty keeping target on attack order in [C&C: "
@@ -157,49 +163,49 @@ msgstr ""
 "![image](_static/images/remember-target-after-deploying-01.gif)  \n"
 "*Nod炮台保持攻击指令在[C&C: Reloaded](https://www.moddb.com/mods/cncreloaded/)中*"
 
-#: ../Fixed-or-Improved-Logics.md:32
+#: ../Fixed-or-Improved-Logics.md:33
 msgid ""
 "Vehicle to building deployers now keep their target when deploying with "
 "`DeployToFire`."
 msgstr "`DeployToFire`的载具在部署后会保持它们之前的攻击目标。"
 
-#: ../Fixed-or-Improved-Logics.md:33
+#: ../Fixed-or-Improved-Logics.md:34
 msgid ""
 "Fixed laser drawing code to allow for thicker lasers in house color draw "
 "mode."
 msgstr "修复了激光绘制的代码以允许所属方颜色绘制模式下更粗的激光。"
 
-#: ../Fixed-or-Improved-Logics.md:34
+#: ../Fixed-or-Improved-Logics.md:35
 msgid "`DeathWeapon` now will properly detonate."
 msgstr "`DeathWeapon`现在会正确引爆了。"
 
-#: ../Fixed-or-Improved-Logics.md:35
+#: ../Fixed-or-Improved-Logics.md:36
 msgid ""
 "But still some settings are ignored like `PreImpactAnim` *(Ares "
 "feature)*, this might change in future."
 msgstr "但是仍有部分设置被忽略，如`PreImpactAnim`*（Ares功能）*，未来可能会改。"
 
-#: ../Fixed-or-Improved-Logics.md:36
+#: ../Fixed-or-Improved-Logics.md:37
 msgid ""
 "Effects like lasers are no longer drawn from wrong firing offset on "
 "weapons that use Burst."
 msgstr "对于使用Burst的武器来说，效果如激光不再会绘制在错误的位置上。"
 
-#: ../Fixed-or-Improved-Logics.md:37
+#: ../Fixed-or-Improved-Logics.md:38
 msgid ""
 "Both Global Variables (`VariableNames` in `rulesmd.ini`) and Local "
 "Variables (`VariableNames` in map) are now unlimited."
 msgstr "全局变量（`rulesmd.ini`中的`VariableNames`）与局部变量（地图中的`VariableNames`）均扩展为无上限的了。"
 
-#: ../Fixed-or-Improved-Logics.md:39
+#: ../Fixed-or-Improved-Logics.md:40
 msgid "Technos"
 msgstr "通用"
 
-#: ../Fixed-or-Improved-Logics.md:41
+#: ../Fixed-or-Improved-Logics.md:42
 msgid "Customizable Teleport/Chrono Locomotor settings per TechnoType"
 msgstr "自定义超时空属性"
 
-#: ../Fixed-or-Improved-Logics.md:43
+#: ../Fixed-or-Improved-Logics.md:44
 msgid ""
 "![image](_static/images/cust-Chrono.gif)   *Chrono Legionnaire and Ronco "
 "(hero) from [YR:New War](https://www.moddb.com/mods/yuris-revenge-new-"
@@ -209,35 +215,35 @@ msgstr ""
 "*超时空军团兵和Ronco（英雄）来自[YR:New War](https://www.moddb.com/mods/yuris-revenge-"
 "new-war)*"
 
-#: ../Fixed-or-Improved-Logics.md:46
+#: ../Fixed-or-Improved-Logics.md:47
 msgid ""
 "You can now specify Teleport/Chrono Locomotor settings per TechnoType to "
 "override default rules values. Unfilled values default to values in "
 "`[General]`."
 msgstr "现在全局中的超时空属性可以在每个单位中微观定义，默认均为对应的全局标签。"
 
-#: ../Fixed-or-Improved-Logics.md:47
+#: ../Fixed-or-Improved-Logics.md:48
 msgid "Only applicable to Techno that have Teleport/Chrono Locomotor attached."
 msgstr "仅对拥有Teleport/Chrono运动模式的单位有效。"
 
-#: ../Fixed-or-Improved-Logics.md:49 ../Fixed-or-Improved-Logics.md:67
-#: ../Fixed-or-Improved-Logics.md:85 ../Fixed-or-Improved-Logics.md:98
-#: ../Fixed-or-Improved-Logics.md:115 ../Fixed-or-Improved-Logics.md:131
-#: ../Fixed-or-Improved-Logics.md:142
+#: ../Fixed-or-Improved-Logics.md:50 ../Fixed-or-Improved-Logics.md:68
+#: ../Fixed-or-Improved-Logics.md:86 ../Fixed-or-Improved-Logics.md:99
+#: ../Fixed-or-Improved-Logics.md:116 ../Fixed-or-Improved-Logics.md:132
+#: ../Fixed-or-Improved-Logics.md:143
 msgid "In `rulesmd.ini`:"
 msgstr "在`rulesmd.ini`中："
 
-#: ../Fixed-or-Improved-Logics.md:62
+#: ../Fixed-or-Improved-Logics.md:63
 msgid "Re-enable obsolete [JumpjetControls]"
 msgstr "重新激活失效的[JumpjetControls]"
 
-#: ../Fixed-or-Improved-Logics.md:64
+#: ../Fixed-or-Improved-Logics.md:65
 msgid ""
 "Re-enable obsolete [JumpjetControls], the keys in it will be as the "
 "default value of jumpjet units."
 msgstr "重新激活失效的[JumpjetControls]，其中的标签会作为Jumpjet类单位的初始值。"
 
-#: ../Fixed-or-Improved-Logics.md:65
+#: ../Fixed-or-Improved-Logics.md:66
 msgid "Moreover, added two tags for missing ones."
 msgstr "此外，增加了新标签对应空缺的项。"
 
@@ -249,11 +255,11 @@ msgid ""
 "simply have no Jumpjet prefix."
 msgstr "`CruiseHeight`对应`JumpjetHeight`，`WobblesPerSecond`对应`JumpjetWobbles`，`WobbleDeviation`对应`JumpjetDeviation`，`Acceleration`对应`JumpjetAccel`。其他对应标签为无Jumpjet前缀的标签。"
 
-#: ../Fixed-or-Improved-Logics.md:78
+#: ../Fixed-or-Improved-Logics.md:79
 msgid "Customizable harvester ore gathering animation"
 msgstr "自定义采矿动画"
 
-#: ../Fixed-or-Improved-Logics.md:80
+#: ../Fixed-or-Improved-Logics.md:81
 msgid ""
 "![image](_static/images/oregath.gif)   *Custom ore gathering anims in "
 "[Project Phantom](https://www.moddb.com/mods/project-phantom)*"
@@ -261,35 +267,35 @@ msgstr ""
 "![image](_static/images/oregath.gif)   \n"
 "*自定义采矿动画在[Project Phantom](https://www.moddb.com/mods/project-phantom)中*"
 
-#: ../Fixed-or-Improved-Logics.md:83
+#: ../Fixed-or-Improved-Logics.md:84
 msgid ""
 "You can now specify which anim should be drawn when a harvester of "
 "specified type is gathering specified type of ore."
 msgstr "现在可以自定义矿车的在不同矿石上的采矿动画了。"
 
-#: ../Fixed-or-Improved-Logics.md:93
+#: ../Fixed-or-Improved-Logics.md:94
 msgid "Kill spawns on low power"
 msgstr "建筑断电子机坠毁"
 
-#: ../Fixed-or-Improved-Logics.md:95
+#: ../Fixed-or-Improved-Logics.md:96
 msgid ""
 "`Powered=yes` structures that spawns aircraft like Aircrafts Carriers "
 "will stop targeting the enemy if low power."
 msgstr "需要供电 (`Powered=yes`) 的建筑类子机发射者现在可以在断电时停止瞄准敌人。"
 
-#: ../Fixed-or-Improved-Logics.md:96
+#: ../Fixed-or-Improved-Logics.md:97
 msgid "Spawned aircrafts self-destruct if they are flying."
 msgstr "而飞行中的子机将会直接坠毁。"
 
-#: ../Fixed-or-Improved-Logics.md:104
+#: ../Fixed-or-Improved-Logics.md:105
 msgid "Terrains"
 msgstr "地形"
 
-#: ../Fixed-or-Improved-Logics.md:106
+#: ../Fixed-or-Improved-Logics.md:107
 msgid "Customizable ore spawners"
 msgstr "自定义矿柱"
 
-#: ../Fixed-or-Improved-Logics.md:108
+#: ../Fixed-or-Improved-Logics.md:109
 msgid ""
 "![image](_static/images/ore-01.png)   *Different ore spawners in [Rise of"
 " the East](https://www.moddb.com/mods/riseoftheeast) mod*"
@@ -297,18 +303,18 @@ msgstr ""
 "![image](_static/images/ore-01.png)  \n"
 "*不同种类的矿柱在[Rise of the East](https://www.moddb.com/mods/riseoftheeast)中*"
 
-#: ../Fixed-or-Improved-Logics.md:111
+#: ../Fixed-or-Improved-Logics.md:112
 msgid "You can now specify which type of ore certain TerrainType would generate."
 msgstr "在可以指定矿柱 (`SpawnsTiberium=yes`) 的地形对象生成的矿石种类。\""
 
-#: ../Fixed-or-Improved-Logics.md:112
+#: ../Fixed-or-Improved-Logics.md:113
 msgid ""
 "It's also now possible to specify a range value for an ore generation "
 "area different compared to standard 3x3 rectangle. Ore will be uniformly "
 "distributed across all affected cells in a spread range."
 msgstr "现在还可以为与标准 3x3 矩形不同的矿石生成区域指定范围。矿石将均匀分布在分布范围内的所有受影响的单元格中。"
 
-#: ../Fixed-or-Improved-Logics.md:113
+#: ../Fixed-or-Improved-Logics.md:114
 msgid ""
 "You can specify which ore growth stage will be spawned and how much cells"
 " will be filled with ore per ore generation animation. Corresponding tags"
@@ -318,27 +324,27 @@ msgstr ""
 "也可以指定将生成矿石的哪个阶段以及每个矿石生成动画周期中会填充多少单元格。 "
 "相应的标签接受一个整数值或两个逗号分隔的值，以允许范围内（含）的随机生长阶段。"
 
-#: ../Fixed-or-Improved-Logics.md:124
+#: ../Fixed-or-Improved-Logics.md:125
 msgid "Weapons"
 msgstr "武器"
 
-#: ../Fixed-or-Improved-Logics.md:126
+#: ../Fixed-or-Improved-Logics.md:127
 msgid "Customizable disk laser radius"
 msgstr "自定义飞碟激光半径"
 
-#: ../Fixed-or-Improved-Logics.md:128
+#: ../Fixed-or-Improved-Logics.md:129
 msgid "![image](_static/images/disklaser-radius-values-01.gif)"
 msgstr ""
 
-#: ../Fixed-or-Improved-Logics.md:129
+#: ../Fixed-or-Improved-Logics.md:130
 msgid "You can now set disk laser animation radius using a new tag."
 msgstr "现在可以通过一个新标签来设置飞碟激光半径"
 
-#: ../Fixed-or-Improved-Logics.md:138
+#: ../Fixed-or-Improved-Logics.md:139
 msgid "Toggle-able ElectricBolt visuals"
 msgstr "可开关的特斯拉特效"
 
-#: ../Fixed-or-Improved-Logics.md:140
+#: ../Fixed-or-Improved-Logics.md:141
 msgid ""
 "You can now specify individual ElectricBolt bolts you want to disable. "
 "Note that this is only a visual change."
