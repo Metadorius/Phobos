@@ -24,6 +24,9 @@ void LaserTrailTypeClass::LoadFromINI(CCINIClass* pINI)
 	this->SegmentLength.Read(exINI, section, "SegmentLength");
 	this->IgnoreVertical.Read(exINI, section, "IgnoreVertical");
 	this->IsIntense.Read(exINI, section, "IsIntense");
+	this->IsLaser.Read(exINI, section, "IsLaser");
+	this->IsElectric.Read(exINI, section, "IsElectric");
+	this->IsBeam.Read(exINI, section, "IsBeam");
 }
 
 template <typename T>
@@ -37,6 +40,9 @@ void LaserTrailTypeClass::Serialize(T& Stm)
 		.Process(this->SegmentLength)
 		.Process(this->IgnoreVertical)
 		.Process(this->IsIntense)
+		.Process(this->IsLaser)
+		.Process(this->IsElectric)
+		.Process(this->IsBeam)
 		;
 }
 
