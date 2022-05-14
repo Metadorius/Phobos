@@ -94,6 +94,7 @@ public:
 	static bool AttachmentAI(TechnoClass* pThis);
 	static bool AttachTo(TechnoClass* pThis, TechnoClass* pParent);
 	static bool DetachFromParent(TechnoClass* pThis, bool force = false);
+	// static std::vector<TechnoClass*> GetAllChildren(TechnoClass* pThis, bool deep = false);
 
 	static void InitializeAttachments(TechnoClass* pThis);
 	static void HandleHostDestruction(TechnoClass* pThis);

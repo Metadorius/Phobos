@@ -82,6 +82,75 @@ DEFINE_HOOK(0x6CC763, SuperClass_Place_ChronoWarp_SkipChildren, 0x6)
 	return pExt->ParentAttachment ? Skip : Continue;
 }
 
+static std::vector<TechnoClass*> GetAllChildren(TechnoClass* pThis, bool deep = false)
+{
+	auto const& pExt = TechnoExt::ExtMap.Find(pThis);
+	std::vector<TechnoClass*> result;
+
+	for (auto const& pAttachment : pExt->ChildAttachments)
+	{
+		if (pAttachment->GetType()->InheritCommands && pAttachment->Child)
+		{
+			result.push_back(pAttachment->Child);
+
+			if (deep)
+			{
+				auto const& innerResult = GetAllChildren(pAttachment->Child, deep);
+				result.insert(result.end(), innerResult.begin(), innerResult.end());
+			}
+		}
+	}
+
+	return result;
+}
+/*
+namespace TechnoAttachmentTemp
+{
+	int appendedChildren;
+}
+
+void AddAttachmentsToSelection()
+{
+	std::vector<TechnoClass*> appendix;
+
+	for (auto const& pObj : ObjectClass::CurrentObjects.get())
+	{
+		if (auto const& pTechno = abstract_cast<TechnoClass*>(pObj))
+		{
+			auto const& innerResult = GetAllChildren(pTechno, true);
+			appendix.insert(appendix.end(), innerResult.begin(), innerResult.end());
+		}
+	}
+
+	for (auto const& pTechno : appendix)
+		ObjectClass::CurrentObjects->AddItem(pTechno);
+
+	TechnoAttachmentTemp::appendedChildren = appendix.size();
+}
+
+void RemoveAttachmentsFromSelection()
+{
+	int& i = TechnoAttachmentTemp::appendedChildren;
+	for (; i > 0; i--)
+		ObjectClass::CurrentObjects->RemoveItem(i);
+}
+
+DEFINE_HOOK(0x4AE7B3, DisplayClass_ActiveClickWith_AppendChildren, 0x6)
+{
+	AddAttachmentsToSelection();
+	return 0;
+}
+
+DEFINE_HOOK_AGAIN(0x4AE85F, DisplayClass_ActiveClickWith_RemoveChildren, 0x7)
+DEFINE_HOOK_AGAIN(0x4AE8DA, DisplayClass_ActiveClickWith_RemoveChildren, 0x7)
+DEFINE_HOOK_AGAIN(0x4AE940, DisplayClass_ActiveClickWith_RemoveChildren, 0x7)
+DEFINE_HOOK(0x4AE993, DisplayClass_ActiveClickWith_RemoveChildren, 0x7)
+{
+	RemoveAttachmentsFromSelection();
+	return 0;
+}
+*/
+
 void ParentClickedWaypoint(TechnoClass* pThis, int idxPath, signed char idxWP)
 {
 	// Rewrite of the original code

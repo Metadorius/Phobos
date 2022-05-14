@@ -586,7 +586,29 @@ bool TechnoExt::DetachFromParent(TechnoClass* pThis, bool isForceDetachment)
 	auto const pExt = TechnoExt::ExtMap.Find(pThis);
 	return pExt->ParentAttachment->DetachChild(isForceDetachment);
 }
+/*
+static std::vector<TechnoClass*> GetAllChildren(TechnoClass* pThis, bool deep = false)
+{
+	auto const& pExt = TechnoExt::ExtMap.Find(pThis);
+	std::vector<TechnoClass*> result;
 
+	for (auto const& pAttachment : pExt->ChildAttachments)
+	{
+		if (auto const& pChild = pAttachment->Child)
+		{
+			result.push_back(pChild);
+
+			if (deep)
+			{
+				auto const& innerResult = TechnoExt::GetAllChildren(pChild, deep);
+				result.insert(result.end(), innerResult.begin(), innerResult.end());
+			}
+		}
+	}
+
+	return result;
+}
+*/
 void TechnoExt::InitializeAttachments(TechnoClass* pThis)
 {
 	auto const pExt = TechnoExt::ExtMap.Find(pThis);
