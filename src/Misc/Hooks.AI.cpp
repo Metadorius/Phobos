@@ -4,8 +4,11 @@
 
 DEFINE_HOOK(0x55B6B3, LogicClass_AI_After, 0x5)
 {
-	for (auto const& attachment : AttachmentClass::Array)
-		attachment->AI();
+	for (auto const& pAttachment : AttachmentClass::Array)
+	{
+		pAttachment->AI();
+		pAttachment->SkipNextUpdate = false;
+	}
 
-	return 0;
+	return 0x0;
 }

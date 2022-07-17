@@ -114,7 +114,7 @@ public:
 	static CoordStruct GetBurstFLH(TechnoClass* pThis, int weaponIndex, bool& FLHFound);
 	static CoordStruct GetSimpleFLH(InfantryClass* pThis, int weaponIndex, bool& FLHFound);
 
-	static bool AttachmentAI(TechnoClass* pThis);
+	static bool AttachmentAI(TechnoClass* pThis, bool isOnRender = false);
 	static bool AttachTo(TechnoClass* pThis, TechnoClass* pParent);
 	static bool DetachFromParent(TechnoClass* pThis, bool force = false);
 

@@ -18,6 +18,8 @@ public:
 	TechnoClass* Parent;
 	TechnoClass* Child;
 
+	bool SkipNextUpdate;
+
 	AttachmentClass(TechnoTypeExt::ExtData::AttachmentDataEntry* data,
 		TechnoClass* pParent, TechnoClass* pChild = nullptr) :
 		Data(data),

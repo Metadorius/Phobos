@@ -68,6 +68,9 @@ void AttachmentClass::CreateChild()
 
 void AttachmentClass::AI()
 {
+	if (this->SkipNextUpdate)
+		return;
+
 	AttachmentTypeClass* pType = this->GetType();
 
 	if (this->Child)

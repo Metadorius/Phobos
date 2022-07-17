@@ -859,14 +859,19 @@ void TechnoExt::DisplayDamageNumberString(TechnoClass* pThis, int damage, bool i
 	pExt->DamageNumberOffset = pExt->DamageNumberOffset + width;
 }
 
-bool TechnoExt::AttachmentAI(TechnoClass* pThis)
+bool TechnoExt::AttachmentAI(TechnoClass* pThis, bool isOnRender)
 {
-	auto const pExt = TechnoExt::ExtMap.Find(pThis);
 	// auto const pTypeExt = TechnoTypeExt::ExtMap.Find(pThis->GetTechnoType());
 
-	if (pExt && pExt->ParentAttachment)
+	if (auto const& pExt = TechnoExt::ExtMap.Find(pThis))
 	{
-		pExt->ParentAttachment->AI();
+		for (auto const& pAttachment : pExt->ChildAttachments)
+		{
+			pAttachment->AI();
+			if (isOnRender)
+				pAttachment->SkipNextUpdate = true;
+		}
+
 		return true;
 	}
 

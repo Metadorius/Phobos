@@ -446,3 +446,17 @@ DEFINE_HOOK(0x4D7D58, FootClass_CellClickedAction_HandleAttachment, 0x6)
 			return Continue;
 	}
 }
+
+
+#define RENDER_HOOK(classN , addr ,size) \
+DEFINE_HOOK(addr, ## classN ##_Render_Hooks, size) {\
+    GET(classN* const, pThis, ECX); \
+    TechnoExt::AttachmentAI((TechnoClass*)pThis, true);\
+    return 0x0; }
+
+RENDER_HOOK(AircraftClass, 0x4144B0, 0x5);
+RENDER_HOOK(BuildingClass, 0x43D290, 0x5);
+RENDER_HOOK(InfantryClass, 0x518F90, 0x7);
+RENDER_HOOK(UnitClass, 0x73CEC0, 0x5);
+
+#undef RENDER_HOOK
