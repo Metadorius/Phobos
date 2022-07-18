@@ -865,12 +865,18 @@ bool TechnoExt::AttachmentAI(TechnoClass* pThis, bool isOnRender)
 
 	if (auto const& pExt = TechnoExt::ExtMap.Find(pThis))
 	{
-		for (auto const& pAttachment : pExt->ChildAttachments)
+		if (pExt->ParentAttachment)
 		{
-			pAttachment->AI();
-			if (isOnRender)
-				pAttachment->SkipNextUpdate = true;
+			pExt->ParentAttachment->AI();
+			pExt->ParentAttachment->SkipNextUpdate = isOnRender;
 		}
+
+		// for (auto const& pAttachment : pExt->ChildAttachments)
+		// {
+		// 	pAttachment->AI();
+		// 	if (isOnRender)
+		// 		pAttachment->SkipNextUpdate = true;
+		// }
 
 		return true;
 	}
