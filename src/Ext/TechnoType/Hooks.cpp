@@ -815,6 +815,8 @@ DEFINE_HOOK(0x629E9B, ParasiteClass_GrappleUpdate_MakeWake_SetContext, 0x5)
 {
 	GET(TechnoClass*, pThis, ECX);
 	GrappleUpdateTemp::pThis = pThis;
+
+	return 0;
 }
 
 DEFINE_HOOK(0x629FA3, ParasiteClass_GrappleUpdate_MakeWake, 0x6)
