@@ -222,6 +222,11 @@ This page lists all the individual contributions to the project by their author.
   - `AmbientDamage` warhead & main target ignore customization
   - Projectile return weapon
   - Aircraft landing / docking direction
+  - `DeploysInto` cursor desync fix
+  - Minor crate logic improvements
+  - Custom tint effects
+  - Revenge weapons
+  - AttachEffect
 - **Morton (MortonPL)**:
   - `XDrawOffset` for animations
   - Shield passthrough & absorption
@@ -251,7 +256,7 @@ This page lists all the individual contributions to the project by their author.
       - Facing towards target even if not omni-firing
       - Turret direction in idle state fix
       - Sensor fix
-      - Allow to tilt on ground
+      - Allow to tilt regardless of TiltCrashJumpjet
       - Forbid firing when crashing
    - OmniFire.TurnToTarget
    - Object Self-destruction logic
@@ -288,13 +293,16 @@ This page lists all the individual contributions to the project by their author.
    - Permanent healthbar display on units targeted by temporal weapons fix
    - Powered anims on buildings cease playing upon capture by different house fix
    - TechnoType conversion placeholder
+   - TechnoType conversion upon ownership change
    - EIP 00529A14 crash fix on Linux
    - Teleport timer reset after load game fix
-   - Teleport and Tunnel loco visual tilt fix
+   - Teleport, Tunnel and Fly loco visual tilt fix
+   - Turret/Barrel/NoSpawnAlt/Multi-section voxel shadow, dynamic voxel shadow
    - Skip units' turret rotation and jumpjets' wobbling under EMP
    - Droppod properties dehardcode
    - Waypoint entering building together with engineer/agent bug fix
    - Skippable game save on scenario start
+   - Skip rally point line drawing when undeploying a building
    - Misc code refactor & maintenance, CN doc fixes, bugfixes
 - **FlyStar**
    - Campaign load screen PCX support
@@ -313,6 +321,8 @@ This page lists all the individual contributions to the project by their author.
   - Jumpjet crash rotation control
   - Vehicle voxel turret shadows & body multi-section shadows
   - `TurretOffset` support for SHP vehicles
+  - Customizable rocker amplitude
+  - Customizable wake anim
 - **Fryone**
   - Customizable ElectricBolt Arcs
   - Sound entry on unit's creation
@@ -320,6 +330,9 @@ This page lists all the individual contributions to the project by their author.
   - Flashing Technos on selecting
 - **ZivDero**
   - Allow giving ownership of buildings to players in Skirmish and MP using <Player @ A-H>
+  - Re-enable the Veinhole Monster and Weeds from TS
+  - Recreate the weed-charging of SWs like the TS Chemical Missile
+  - Allow to change the speed of gas particles
 - **Ares developers**
   - YRpp and Syringe which are used, save/load, project foundation and generally useful code from Ares
   - unfinished RadTypes code
