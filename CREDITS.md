@@ -321,7 +321,6 @@ This page lists all the individual contributions to the project by their author.
   - Jumpjet crash rotation control
   - Vehicle voxel turret shadows & body multi-section shadows
   - `TurretOffset` support for SHP vehicles
-  - Customizable rocker amplitude
   - Customizable wake anim
 - **Fryone**
   - Customizable ElectricBolt Arcs

@@ -405,7 +405,6 @@ New:
 - Revenge weapon (by Starkku)
 - AttachEffect types with new features like custom tint and weapon range modifier (by Starkku)
 - Force shield effect sync on deploy & vs. organic targets effect customization to complement the Iron Curtain ones (by Starkku)
-- Customizable rocker amplitude (by TwinkleStar)
 - Customizable wake anim (by TwinkleStar)
 
 Vanilla fixes:
