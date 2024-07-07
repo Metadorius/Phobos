@@ -92,19 +92,6 @@ void TechnoTypeExt::ExtData::ParseBurstFLHs(INI_EX& exArtINI, const char* pArtSe
 	}
 }
 
-AnimTypeClass* TechnoTypeExt::GetWakeAnim(LocomotionClass* pLoco)
-{
-	const auto pThis = pLoco->LinkedTo;
-	if (!pThis)
-		return nullptr;
-
-	const auto pTypeExt = TechnoTypeExt::ExtMap.Find(pThis->GetTechnoType());
-	if (!pTypeExt || !pTypeExt->Wake.isset())
-		return nullptr;
-
-	return pTypeExt->Wake.Get(nullptr);
-}
-
 //TODO: YRpp this with proper casting
 TechnoTypeClass* TechnoTypeExt::GetTechnoType(ObjectTypeClass* pType)
 {

@@ -792,17 +792,11 @@ DEFINE_HOOK_AGAIN(0x69FEDC, Locomotion_Process_Wake, 0x6)
 DEFINE_HOOK_AGAIN(0x4B0814, Locomotion_Process_Wake, 0x6)
 DEFINE_HOOK(0x514AB4, Locomotion_Process_Wake, 0x6)
 {
-	GET(ILocomotion*, pILoco, ESI);
+	GET(ILocomotion* const, pILoco, ESI);
 
-	const auto pLoco = static_cast<LocomotionClass*>(pILoco);
-	if (!pLoco)
-		return 0;
+	const auto pTypeExt = TechnoTypeExt::ExtMap.Find(static_cast<LocomotionClass*>(pILoco)->LinkedTo->GetTechnoType());
+	R->EDX(pTypeExt->Wake.Get(RulesClass::Instance->Wake));
 
-	const auto pAnim = TechnoTypeExt::GetWakeAnim(pLoco);
-	if (!pAnim)
-		return 0;
-
-	R->EDX(pAnim);
 	return R->Origin() + 0xC;
 }
 
@@ -821,26 +815,28 @@ DEFINE_HOOK(0x629E9B, ParasiteClass_GrappleUpdate_MakeWake_SetContext, 0x5)
 
 DEFINE_HOOK(0x629FA3, ParasiteClass_GrappleUpdate_MakeWake, 0x6)
 {
-	auto pTypeExt = TechnoTypeExt::ExtMap.Find(GrappleUpdateTemp::pThis->GetTechnoType());
-	R->EDX(pTypeExt->Wake_Grapple.Get(RulesClass::Instance->Wake));
+	const auto pTypeExt = TechnoTypeExt::ExtMap.Find(GrappleUpdateTemp::pThis->GetTechnoType());
+	R->EDX(pTypeExt->Wake_Grapple.Get(pTypeExt->Wake.Get(RulesClass::Instance->Wake)));
 
 	return 0x629FA9;
 }
 
 DEFINE_HOOK(0x7365AD, UnitClass_Update_SinkingWake, 0x6)
 {
-	GET(UnitClass*, pThis, ESI);
-	auto pTypeExt = TechnoTypeExt::ExtMap.Find(pThis->Type);
-	R->ECX(pTypeExt->Wake_Sinking.Get(RulesClass::Instance->Wake));
+	GET(UnitClass* const, pThis, ESI);
+
+	const auto pTypeExt = TechnoTypeExt::ExtMap.Find(pThis->Type);
+	R->ECX(pTypeExt->Wake_Sinking.Get(pTypeExt->Wake.Get(RulesClass::Instance->Wake)));
 
 	return 0x7365B3;
 }
 
 DEFINE_HOOK(0x737F05, UnitClass_ReceiveDamage_SinkingWake, 0x6)
 {
-	GET(UnitClass*, pThis, ESI);
-	auto pTypeExt = TechnoTypeExt::ExtMap.Find(pThis->Type);
-	R->ECX(pTypeExt->Wake_Sinking.Get(RulesClass::Instance->Wake));
+	GET(UnitClass* const, pThis, ESI);
+
+	const auto pTypeExt = TechnoTypeExt::ExtMap.Find(pThis->Type);
+	R->ECX(pTypeExt->Wake_Sinking.Get(pTypeExt->Wake.Get(RulesClass::Instance->Wake)));
 
 	return 0x737F0B;
 }
