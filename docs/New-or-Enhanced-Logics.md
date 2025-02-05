@@ -190,7 +190,7 @@ DestructionWeapon.Parent=             ; WeaponType, detonated on parent when chi
 ParentDestructionMission=             ; MissionType, queued to child when parent is destroyed
 ParentDetachmentMission=              ; MissionType, queued to child when it's detached from parent
 
-[SOMETECHNO]                          ; TechnoTypeClass
+[SOMETECHNO]                          ; TechnoType
 ; used when this techno is attached
 AttachmentTopLayerMinHeight=          ; integer
 AttachmentUndergroundLayerMaxHeight=  ; integer
@@ -202,7 +202,7 @@ AttachmentX.IsOnTurret=false          ; boolean
 AttachmentX.RotationAdjust=0          ; rotation in DirType, from -255 to 255
 
 [General]
-AttachmentTopLayerMinHeight=500           ; integer,
+AttachmentTopLayerMinHeight=500           ; integer
 AttachmentUndergroundLayerMaxHeight=-256  ; integer
 ```
 
