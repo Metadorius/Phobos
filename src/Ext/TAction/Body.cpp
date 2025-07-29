@@ -8,6 +8,7 @@
 #include <SuperClass.h>
 #include <Ext/SWType/Body.h>
 #include <Utilities/SavegameDef.h>
+#include <Utilities/SpawnerHelper.h>
 
 #include <Ext/Scenario/Body.h>
 
@@ -101,10 +102,10 @@ bool TActionExt::PlayAudioAtRandomWP(TActionClass* pThis, HouseClass* pHouse, Ob
 
 bool TActionExt::SaveGame(TActionClass* pThis, HouseClass* pHouse, ObjectClass* pObject, TriggerClass* pTrigger, CellStruct const& location)
 {
-	if (SessionClass::IsSingleplayer())
+	if (SessionClass::IsSingleplayer() || SpawnerHelper::IsSaveGameEventHooked())
 	{
 		*reinterpret_cast<bool*>(0xABCE08) = false;
-		Phobos::ShouldQuickSave = true;
+		Phobos::ShouldSave = true;
 
 		if (SessionClass::IsCampaign())
 			Phobos::CustomGameSaveDescription = ScenarioClass::Instance->UINameLoaded;
