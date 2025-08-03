@@ -258,6 +258,11 @@ This page describes all ingame logics that are fixed or improved in Phobos witho
 - Fixed some units of Ares crashing after deployment conversion.
 - Fixed the bug that AlphaImage remained after unit entered tunnel.
 - Fixed an issue where Ares' `Convert.Deploy` triggers repeatedly when the unit is turning or moving.
+- The game now automatically changes save file name from `SAVEGAME.NET` to `SVGM_XXX.NET` (where `XXX` is a number; this naming scheme compliant with XNA CnCNet Client) when saving to prevent occasional overwriting of the save file when using Phobos with XNA CnCNet Client and spamming game save.
+
+```{note}
+At the moment this is only useful if you use a version of [YRpp spawner](https://github.com/CnCNet/yrpp-spawner) with multiplayer saves support.
+```
 
 ## Aircraft
 

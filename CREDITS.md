@@ -49,6 +49,7 @@ This page lists all the individual contributions to the project by their author.
   - Voxel light source position customization
   - `UseFixedVoxelLighting`
   - MP saves support for quicksave command and savegame trigger action
+  - `SAVEGAME.NET` -> `SVGM_XXX.NET` rename
 - **Uranusian (Thrifinesma)**:
   - Mind Control enhancement
   - Custom warhead splash list
